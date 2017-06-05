@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/money-calculate.css">
+</head>
+<body>
+<div class="main" id="app-main" v-cloak>
+    <h1>Services</h1>
+    <ul>
+        <li class="clearfix" v-for="item in menu" v-bind:class="{active:item.active}" v-on:click="selectMenu(item)">
+            <span class="menu">{{item.title}}</span>
+            <span class="menu-price">${{item.price}}</span>
+        </li>
+
+    </ul>
+    <p class="clearfix">
+        <span class="total">Total</span>
+        <span class="total-price">${{totalPrice()}}</span>
+    </p>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app-main',
+        data:{
+            menu:[
+                {
+                    active:true,
+                    title:'Web Development',
+                    price:300
+                },
+                {
+                    active:false,
+                    title:'Design',
+                    price:400
+                },
+                {
+                    active:false,
+                    title:'Integration',
+                    price:250
+                },
+                {
+                    active:false,
+                    title:'Training',
+                    price:220
+                }
+            ]
+        },
+        methods:{
+            selectMenu:function (menu) {
+                menu.active = !menu.active;
+            },
+            totalPrice:function () {
+                var total = 0;
+                this.menu.forEach(function (menu) {
+                    if (menu.active){
+                        total += menu.price;
+                    }
+                })
+                return total;
+            }
+        }
+    })
+</script>
+</body>
+</html>

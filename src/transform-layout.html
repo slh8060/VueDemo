@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/iconfont/css/iconfont.css">
+    <link rel="stylesheet" href="style/transform-layout.css">
+</head>
+<body>
+
+<div id="app-main">
+    <nav class="clearfix nav">
+        <span class="iconfont icon-list" v-bind:class="{active: layout == 'list'}" v-on:click="layoutTransform('list')"></span>
+        <span class="iconfont icon-tile" v-bind:class="{active: layout == 'tile'}" v-on:click="layoutTransform('tile')"></span>
+    </nav>
+    <section class="section">
+        <ul class="clearfix tile"  v-if="layout == 'tile'">
+            <li class="large" v-for="item in articles">
+                <img :src="item.image.large" alt="">
+            </li>
+
+        </ul>
+
+        <ul class="clearfix list" v-if="layout == 'list'">
+            <li class="clearfix small" v-for="item in articles">
+                <img v-bind:src="item.image.small" alt="">
+                <p>{{item.title}}</p>
+            </li>
+        </ul>
+
+    </section>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app-main',
+        data:{
+            layout:'tile',
+            articles: [{
+                "title": "What You Need To Know About CSS Variables",
+                "image": {
+                    "large": "http://cdn.tutorialzine.com/wp-content/uploads/2016/03/css-variables.jpg",
+                    "small": "http://cdn.tutorialzine.com/wp-content/uploads/2016/03/css-variables-150x150.jpg"
+                }
+            },
+                {
+                    "title": "Freebie: 4 Great Looking Pricing Tables",
+                    "image": {
+                        "large": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/great-looking-pricing-tables.jpg",
+                        "small": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/great-looking-pricing-tables-150x150.jpg"
+                    }
+                },
+                {
+                    "title": "20 Interesting JavaScript and CSS Libraries for February 2016",
+                    "image": {
+                        "large": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/interesting-resources-february.jpg",
+                        "small": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/interesting-resources-february-150x150.jpg"
+                    }
+                },
+                {
+                    "title": "Quick Tip: The Easiest Way To Make Responsive Headers",
+                    "image": {
+                        "large": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/quick-tip-responsive-headers.png",
+                        "small": "http://cdn.tutorialzine.com/wp-content/uploads/2016/02/quick-tip-responsive-headers-150x150.png"
+                    }
+                },
+                {
+                    "title": "Learn SQL In 20 Minutes",
+                    "image": {
+                        "large": "http://cdn.tutorialzine.com/wp-content/uploads/2016/01/learn-sql-20-minutes.png",
+                        "small": "http://cdn.tutorialzine.com/wp-content/uploads/2016/01/learn-sql-20-minutes-150x150.png"
+                    }
+                },
+                {
+                    "title": "Creating Your First Desktop App With HTML, JS and Electron",
+                    "image": {
+                        "large": "http://cdn.tutorialzine.com/wp-content/uploads/2015/12/creating-your-first-desktop-app-with-electron.png",
+                        "small": "http://cdn.tutorialzine.com/wp-content/uploads/2015/12/creating-your-first-desktop-app-with-electron-150x150.png"
+                    }
+                }]
+
+        },
+        methods:{
+            layoutTransform:function (name) {
+                this.layout = name;
+            }
+        }
+    })
+</script>
+</body>
+</html>

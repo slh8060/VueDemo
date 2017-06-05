@@ -1,0 +1,90 @@
+
+.clearfix:after {
+  content: ".";
+  /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+  display: block;
+  /*加入的这个元素转换为块级元素。*/
+  clear: both;
+  /*清除左右两边浮动。*/
+  visibility: hidden;
+  /*可见度设为隐藏。注意它和display:none;是有区别 的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+  line-height: 0;
+  /*行高为0；*/
+  height: 0;
+  /*高度为0；*/
+  font-size: 0;
+  /*字体大小为0；*/
+}
+.clearfix {
+  *zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+#app-main {
+  margin: 50px auto;
+  width: 580px;
+  .nav {
+    background: #5c9bb7;
+    padding: 5px 10px;
+    border-radius: 2px;
+    .iconfont {
+      font-size: 25px;
+      margin-left: 10px;
+      color: #fff;
+      background: #4987a1;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 2px;
+    }
+    .icon-list {
+      float: right;
+    }
+    .icon-tile {
+      float: right;
+    }
+    .active {
+      background: #c14694;
+    }
+  }
+  .section {
+    padding-top: 20px;
+    .tile {
+      width: 570px;
+      margin: 0 auto;
+      .large {
+        padding: 2px;
+        float: left;
+         img {
+           width: 279px;
+           height: 280px;
+           border: 1px solid #ccc;
+           display: block;
+         }
+      }
+    }
+    .list {
+      .small {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+        img {
+          float: left;
+          width: 120px;
+          height: 120px;
+          border: 1px solid #ccc;
+        }
+        p {
+          margin-left: 130px;
+          color: #6e7a7f;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

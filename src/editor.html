@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/iconfont/css/iconfont.css">
+    <link rel="stylesheet" href="style/editor.css">
+</head>
+<body>
+<div class="main" id="app-main">
+    <div class="tooltip" v-show="tooltipShow">
+        <input class="ipt" type="text" v-model="editMsg">
+    </div>
+
+    <p class="edit-wrap" v-on:click="editShow()">
+        <span class="iconfont icon-edit"></span>
+        <span class="edit-content">{{editMsg}}</span>
+    </p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app-main',
+        data:{
+            editMsg:'Edit me!',
+            tooltipShow:false
+        },
+        methods:{
+            editShow:function () {
+                this.tooltipShow = !this.tooltipShow;
+            }
+        }
+    })
+</script>
+</body>
+</html>

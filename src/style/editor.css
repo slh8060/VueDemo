@@ -1,0 +1,46 @@
+.main {
+    text-align: center;
+}
+.tooltip {
+    text-align: center;
+    background: #5c9bb7;
+    border-radius: 3px;
+    width: 290px;
+    height: 40px;
+    position: absolute;
+    top: 19px;
+    left: 37%;
+}
+.tooltip:after{
+    content: '';
+    position: absolute;
+    top: 39px;
+    left: 50%;
+    border: 6px solid #5190ac;
+    border-color: #5190ac transparent transparent;
+    width: 0;
+}
+
+.edit-wrap {
+    color: #6d8088;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 60px 0 0;
+}
+
+.edit-wrap .icon-edit {
+    cursor: pointer;
+    font-size: 36px;
+}
+
+.ipt {
+    text-indent: 12px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    outline: 2px;
+    height: 20px;
+    vertical-align: middle;
+    width: 241px;
+    margin-top: 8px;
+}

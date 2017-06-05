@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/navgation.css">
+</head>
+<body>
+<div class="main" id="app-main">
+    <nav class="clearfix nav" v-bind:class="active" v-on:click.prevent>
+        <a class="home" v-on:click="selectMenu('home')" href="">Home</a>
+        <a class="projects" v-on:click="selectMenu('projects')" href="">Projects</a>
+        <a class="services" v-on:click="selectMenu('services')" href="">Services</a>
+        <a class="contact" v-on:click="selectMenu('contact')" href="">Conact</a>
+    </nav>
+
+    <div class="content-wrap" v-bind:class="activeContent">
+        <div class="home-content">
+            <p class="select-tip">You choose <span class="select-val">{{active}}</span></p>
+        </div>
+        <div class="projects-content">
+            <p class="select-tip">You choose <span class="select-val">{{active}}</span></p>
+        </div>
+        <div class="services-content">
+            <p class="select-tip">You choose <span class="select-val">{{active}}</span></p>
+        </div>
+        <div class="contact-content">
+            <p class="select-tip">You choose <span class="select-val">{{active}}</span></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app-main',
+        data: {
+            active: 'home',
+            activeContent: 'home-active'
+        },
+        methods: {
+            selectMenu: function (item) {
+                this.active = item;
+                this.activeContent = item + '-active'
+            }
+        }
+    })
+</script>
+</body>
+</html>

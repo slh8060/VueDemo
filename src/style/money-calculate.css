@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+[v-cloak] {
+  display: none;
+}
+.main {
+  margin: 50px auto;
+  background: #61a1bc;
+  padding: 35px 60px;
+  width: 400px;
+  text-align: center;
+}
+.main h1 {
+  font-family: 'Cookie', cursive;
+  font-size: 50px;
+  color: #fff;
+}
+.main ul {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.main ul li {
+  cursor: pointer;
+  padding: 20px 30px;
+  background: #e35885;
+  margin: 10px 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+}
+.main ul li .menu {
+  float: left;
+}
+.main ul li .menu-price {
+  float: right;
+}
+.main ul li.active {
+  background: #8ec16d;
+}
+.main p {
+  padding: 0 25px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.main p .total {
+  float: left;
+}
+.main p .total-price {
+  float: right;
+}
+.clearfix:after {
+  content: ".";
+  /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+  display: block;
+  /*加入的这个元素转换为块级元素。*/
+  clear: both;
+  /*清除左右两边浮动。*/
+  visibility: hidden;
+  /*可见度设为隐藏。注意它和display:none;是有区别 的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+  line-height: 0;
+  /*行高为0；*/
+  height: 0;
+  /*高度为0；*/
+  font-size: 0;
+  /*字体大小为0；*/
+}
+.clearfix {
+  *zoom: 1;
+}
